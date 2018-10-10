@@ -19,7 +19,7 @@ Page {
         text: qsTr("Page 2")
         font.pixelSize: Qt.application.font.pixelSize * 2
         padding: 10
-        font.family: webFont.name
+        font.family: fixedFont.name
     }
 
     Label {
@@ -27,4 +27,6 @@ Page {
         anchors.centerIn: parent
         font.family: fixedFont.name
     }
+
+
 }

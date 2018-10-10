@@ -6,39 +6,34 @@ Page {
 
     FontLoader {
         id: fixedFont
-        name: "Arial"
-    }
-
-    FontLoader {
-        id: localFont
-        source: "C:\Windows\Fonts\FZSTK.TTF"
+        name: "Microsoft Sans Serif"
     }
 
     Grid {
         id: grid
-        x: 41
-        y: 56
-        width: 538
-        height: 400
-    }
+        spacing: 8
+        rows: 6
+        columns: 3
+        anchors.rightMargin: 5
+        anchors.leftMargin: 4
+        anchors.bottomMargin: 5
+        anchors.topMargin: 5
+        anchors.fill: parent
 
-    Button {
-        id: button
-        x: 147
-        y: 193
-        text: qsTr("宋")
-        font.family: localFont.name
-        font.pixelSize: 25
-    }
+        GongItem {
 
-    Button {
-        id: button1
-        x: 64
-        y: 84
-        text: qsTr("Button")
-        font {
-            family: localFont.name
-            pixelSize: 25
+        }
+
+        RoundButton {
+            id: roundButton3
+            text: "+"
         }
     }
+
+
+
+    //    FontLoader {
+    //        id: localFont
+    //        source: "FZSTK.TTF"
+    //    }
 }
