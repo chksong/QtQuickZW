@@ -10,10 +10,12 @@ Page {
     }
 
     Grid {
+     //   width: parent.width ;
+
         id: grid
-        spacing: 8
-        rows: 6
-        columns: 3
+      //  spacing: 8
+        rows: 4
+        columns: 4
         anchors.rightMargin: 5
         anchors.leftMargin: 4
         anchors.bottomMargin: 5
@@ -23,6 +25,19 @@ Page {
         GongItem {
 
         }
+
+        GongItem {
+
+        }
+
+        GongItem {
+
+        }
+
+        GongItem {
+
+        }
+
 
         RoundButton {
             id: roundButton3
