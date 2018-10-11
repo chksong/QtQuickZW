@@ -23,7 +23,6 @@ Page {
         anchors.fill: parent
 
         GongItem {
-
         }
 
         GongItem {
@@ -38,10 +37,46 @@ Page {
 
         }
 
+        GongItem {
+        }
 
-        RoundButton {
-            id: roundButton3
-            text: "+"
+        Bank {
+        }
+
+        Bank {
+        }
+
+        GongItem {
+
+        }
+
+        GongItem {
+        }
+
+        Bank {
+        }
+
+        Bank {
+        }
+
+
+        GongItem {
+
+        }
+
+
+        GongItem {
+
+        }
+
+        GongItem {
+
+        }
+        GongItem {
+
+        }
+        GongItem {
+
         }
     }
 
