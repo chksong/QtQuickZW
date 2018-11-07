@@ -11,8 +11,6 @@ Page {
     }
 
     FontLoader {
-        id: webFont
-        source: "http://www.princexml.com/fonts/steffmann/Starburst.ttf"
     }
 
     header: Label {
@@ -27,6 +25,9 @@ Page {
         anchors.centerIn: parent
         font.family: fixedFont.name
     }
-
-
 }
+
+/*##^## Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+ ##^##*/
