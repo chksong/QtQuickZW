@@ -2,6 +2,9 @@
 #include <QQmlApplicationEngine>
 #include <QFont>
 
+// webGL输出 -platform webgl:port=12345
+//
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
