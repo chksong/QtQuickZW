@@ -6,6 +6,17 @@ Item {
     width : parent.width  / 4
     height: parent.height / 4
 
+    //干支
+    Text {
+        id:ganzhi
+        text: "戊戌"
+        x : 0
+        y : parent.height *2/3
+        width: parent.width  /4
+        height: parent.height/3
+    }
+
+
     Canvas {
         id : canvas
         width : parent.width
