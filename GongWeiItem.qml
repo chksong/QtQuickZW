@@ -16,21 +16,34 @@ Item {
             var ctx = canvas.getContext('2d') ;
 
             //createa rectanglepath
-            ctx.rect(0,0,thisRect.width,thisRect.height)
-//           //setupfillcolor
-//          ctx.fillStyle="#FFF0A5"
-//           //fillpath
-//          ctx.fill()
+            ctx.rect(0,0,width, height)
+//            ctx.fillStyle="#FFF0A5"
+//            ctx.fill()
 
-            //画边框
+            //画最外边框
             ctx.lineWidth=1
-            ctx.strokeStyle="#468966"
+            ctx.strokeStyle="red"
+            ctx.stroke()
 
+            //画线条
+            ctx.strokeStyle="black"
+            ctx.beginPath()
+            ctx.moveTo(0,  height*2/3)
+            ctx.lineTo(width,height*2/3)
 
+            ctx.moveTo(width/4 ,  height*2/3)
+            ctx.lineTo(width/4,height)
 
+            ctx.moveTo(width*3/4 ,  height*2/3)
+            ctx.lineTo(width*3/4,   height)
 
+            ctx.moveTo(width/4 ,  height*5/6)
+            ctx.lineTo(width*3/4, height*5/6)
+            ctx.closePath()
 
-             ctx.stroke()
+            ctx.fillStyle = "steelblue"
+           // ctx.fill()
+            ctx.stroke()
         }
     }
 

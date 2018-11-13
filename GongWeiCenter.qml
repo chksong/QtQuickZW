@@ -24,7 +24,7 @@ Item {
 //            ctx.fill()
 
             ctx.lineWidth=1
-            ctx.strokeStyle="#468966"
+            ctx.strokeStyle="red"
             //strokepath
             ctx.stroke()
 
