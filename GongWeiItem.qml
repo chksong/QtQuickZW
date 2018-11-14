@@ -10,10 +10,14 @@ Item {
     Text {
         id:ganzhi
         text: "戊戌"
-        x : 0
+        x : parent.width  /16
+        width: parent.width  /8
+
         y : parent.height *2/3
-        width: parent.width  /4
         height: parent.height/3
+
+        verticalAlignment: Text.AlignVCenter
+        wrapMode: Text.WordWrap
     }
 
 
