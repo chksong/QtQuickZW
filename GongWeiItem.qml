@@ -2,24 +2,21 @@ import QtQuick 2.0
 import QtQuick.Controls.Styles 1.4
 
 Item {
-    id : thisRect
+    id : root
     width : parent.width  / 4
     height: parent.height / 4
 
-    //干支
-    Text {
-        id:ganzhi
-        text: "戊戌"
-        x : parent.width  /16
-        width: parent.width  /8
+    signal clicked
+    property bool isSelect : false
 
-        y : parent.height *2/3
-        height: parent.height/3
-
-        verticalAlignment: Text.AlignVCenter
-        wrapMode: Text.WordWrap
+    MouseArea {
+        anchors.fill: parent
+        onClicked:  {
+          //  root.clicked()
+           console.log("bbbbb")
+           canvas.requestPaint()
+        }
     }
-
 
     Canvas {
         id : canvas
@@ -28,12 +25,22 @@ Item {
         anchors.centerIn: parent
 
         onPaint:  {
+            console.log("cccccccc")
             var ctx = canvas.getContext('2d') ;
+            ctx.reset();
+            ctx.rect(0,0,width, height)
 
             //createa rectanglepath
-            ctx.rect(0,0,width, height)
-//            ctx.fillStyle="#FFF0A5"
-//            ctx.fill()
+            if(root.isSelect) {
+                ctx.fillStyle="#FFF0A5"
+                ctx.fill()
+                root.isSelect = false
+            }
+            else {
+                root.isSelect = true
+            }
+
+
 
             //画最外边框
             ctx.lineWidth=1
@@ -62,4 +69,26 @@ Item {
         }
     }
 
+
+    function redraw() {
+       update()
+    }
+
+
+
+
+
+    //干支
+    Text {
+        id: label_ganzhi
+        text: "戊戌"
+        x : parent.width  /16
+        width: parent.width  /8
+
+        y : parent.height *2/3
+        height: parent.height/3
+
+        verticalAlignment: Text.AlignVCenter
+        wrapMode: Text.WordWrap
+    }
 }
