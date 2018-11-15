@@ -6,15 +6,24 @@ Item {
     width : parent.width  / 4
     height: parent.height / 4
 
-    signal clicked
+    signal sigSelected(int tag)
     property bool isSelect : false
+    property int tag
 
     MouseArea {
         anchors.fill: parent
         onClicked:  {
-          //  root.clicked()
-           console.log("bbbbb")
+
+           if(false == isSelect) {
+               isSelect = true
+               root.sigSelected(tag)
+           }
+           else {
+               isSelect = false
+           }
+
            canvas.requestPaint()
+   //      console.log("after  .." ,tag, isSelect)
         }
     }
 
@@ -25,21 +34,16 @@ Item {
         anchors.centerIn: parent
 
         onPaint:  {
-            console.log("cccccccc")
+      //      console.log("cccccccc")
             var ctx = canvas.getContext('2d') ;
             ctx.reset();
             ctx.rect(0,0,width, height)
 
             //createa rectanglepath
-            if(root.isSelect) {
+            if(isSelect) {
                 ctx.fillStyle="#FFF0A5"
                 ctx.fill()
-                root.isSelect = false
             }
-            else {
-                root.isSelect = true
-            }
-
 
 
             //画最外边框
@@ -70,12 +74,17 @@ Item {
     }
 
 
-    function redraw() {
-       update()
+    function unSetSelect( tmptag ) {
+       if(tmptag !== tag &&  isSelect) {
+           isSelect = false ;
+           canvas.requestPaint() ;
+       }
     }
 
-
-
+    function setSelect() {
+        isSelect = true ;
+        canvas.requestPaint() ;
+    }
 
 
     //干支

@@ -10,5 +10,6 @@
         <file>GongWeiItem.qml</file>
         <file>ZiWeiForm.ui.qml</file>
         <file>GongWeiCenter.qml</file>
+        <file>ZiWeiContain.qml</file>
     </qresource>
 </RCC>
