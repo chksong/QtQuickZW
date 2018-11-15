@@ -75,7 +75,7 @@ Item {
 
 
     function unSetSelect( tmptag ) {
-       if(tmptag !== tag &&  isSelect) {
+       if( isSelect  &&  tmptag !== tag ) {
            isSelect = false ;
            canvas.requestPaint() ;
        }
